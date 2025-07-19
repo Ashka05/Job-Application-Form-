@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #007BFF; /* Bootstrap primary blue */
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-top: 5px;
+    }
+
+    .radio-group input, .checkbox-group input {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    input[type="submit"] {
+      width: auto;
+      background-color: #28a745; /* Bootstrap success green */
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Job Application Form</h2>
+
+    <form>
+      <!-- Personal Information -->
+      <h3>Personal Information</h3>
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
+
+      <label>Gender:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+      </div>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <!-- Education Details -->
+      <h3>Education Details</h3>
+
+      <label for="qualification">Highest Qualification:</label>
+      <select id="qualification" name="qualification" required>
+        <option disabled selected>-- Select Qualification --</option>
+        <option value="High School">High School</option>
+        <option value="Bachelor's Degree">Bachelor's Degree</option>
+        <option value="Master's Degree">Master's Degree</option>
+        <option value="Doctorate">Doctorate</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="specialisation">Specialisation/Stream:</label>
+      <input type="text" id="specialisation" name="specialisation">
+
+      <label for="university">University/Institute Name:</label>
+      <input type="text" id="university" name="university">
+
+      <!-- Work Experience -->
+      <h3>Work Experience</h3>
+
+      <label for="experience">Years of Experience:</label>
+      <input type="number" id="experience" name="experience" min="0" max="50">
+
+      <label>Skills:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label>
+
+        <input type="checkbox" id="python" name="skills" value="Python">
+        <label for="python">Python</label>
+
+        <input type="checkbox" id="other-skill" name="skills" value="Other">
+        <label for="other-skill">Other</label>
+      </div>
+
+      <!-- Resume Upload -->
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+      <!-- Cover Letter -->
+      <label for="coverletter">Cover Letter:</label>
+      <textarea id="coverletter" name="coverletter" rows="4"></textarea>
+
+      <!-- Declaration -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="declaration" name="declaration" required>
+        <label for="declaration">I confirm that the information provided is true.</label>
+      </div>
+
+      <!-- Submit -->
+      <input type="submit" value="Submit Application">
+    </form>
+  </div>
+</body>
+</html>
+
